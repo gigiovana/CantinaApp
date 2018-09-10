@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonAddS;
     private Button buttonAddR;
     private EditText editTotal;
-
+    private Double total;
 
 
 
@@ -27,16 +27,24 @@ public class MainActivity extends AppCompatActivity {
         buttonAddS = (Button) findViewById(R.id.buttonAddS);
         buttonDelR = (Button) findViewById(R.id.buttonDelR);
         buttonDelS = (Button) findViewById(R.id.buttonDelS);
+        editTotal = (EditText) findViewById(R.id.editTotal);
 
-        buttonDelS.setOnClickListener(new View.OnClickListener() {
+        total = 0.0;
+
+        buttonAddR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                total = Double.parseDouble(editTotal.getText().toString());
+                total += 1.50;
+                editTotal.setText(""+total);
             }
         });
-
-
-
-
     }
+
+
+
+
+
+
+
 }
